@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: subtitle_app
+      POSTGRES_USER: mahesh
+      POSTGRES_PASSWORD: Mahesh@123
+      POSTGRES_HOST: db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  backend:
+    build: ./backend # Assumes your backend (Django) code is in a folder called 'backend'
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_NAME: subtitle_app
+      DB_USER: mahesh
+      DB_PASSWORD: Mahesh@123
+      DB_HOST: db
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend # Assumes your frontend (React) code is in a folder called 'frontend'
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:

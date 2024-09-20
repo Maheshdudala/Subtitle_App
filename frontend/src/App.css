@@ -1,0 +1,36 @@
+/* App.css */
+h2 {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input[type="file"] {
+  margin-right: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  color: #ff0000;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+}

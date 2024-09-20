@@ -129,11 +129,13 @@ Backend:
 
 http://localhost:8000/upload/
 
-http://localhost:8000/upload/
+http://localhost:8000/list-videos/
 
-http://localhost:8000/upload/
+http://localhost:8000/video-detail/
 
-http://localhost:8000/upload/
+http://localhost:8000/search_subtitles/
+
+http://localhost:8000/get_subtitle/<int:subtitle_id>/
 
 frontend:
 
